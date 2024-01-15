@@ -16,6 +16,9 @@ let positions=[
     [3,5,7]
 ];
 
+function reload(){
+    location.reload();
+}
 
 function init(){
     selected=[];
@@ -48,6 +51,7 @@ function init(){
                 scoreboard.innerHTML = span;
             }
 
+           
         });
     }
  
