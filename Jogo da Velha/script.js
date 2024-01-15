@@ -29,6 +29,7 @@ function init(){
             item.addEventListener("click", newMove);
             
         });
+        
     }else{
         document.querySelectorAll("button").forEach((item)=>{
             item.innerHTML="";
@@ -51,10 +52,11 @@ function init(){
                 scoreboard.innerHTML = span;
             }
 
-           
+            soltarConfetes();
+
+            setTimeout(reload, 5000);
         });
     }
- 
 }
 
 init();
@@ -98,3 +100,23 @@ function check(){
     }
 
 }
+
+function soltarConfetes() {
+    const cores = ['#ff69b4', '#ff0000', '#ffd700', '#008000']; 
+    const quantidadeConfetes = 100;
+
+    for (let i = 0; i < quantidadeConfetes; i++) {
+      criarConfete(cores[Math.floor(Math.random() * cores.length)]);
+    }
+  }
+
+  function criarConfete(cor) {
+    const confete = document.createElement('div');
+    confete.className = 'confete';
+    confete.style.backgroundColor = cor;
+
+    confete.style.left = Math.random() * window.innerWidth + 'px';
+    confete.style.animationDelay = Math.random() * 2 + 's'; 
+
+    document.body.appendChild(confete);
+  }
