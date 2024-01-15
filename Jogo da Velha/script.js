@@ -4,6 +4,7 @@ let Xspan = document.getElementById("X");
 let Ospan = document.getElementById("O");
 let X=0;
 let O=0;
+let limit = 0;
 let positions=[
     [1,2,3],
     [4,5,6],
@@ -16,15 +17,40 @@ let positions=[
 ];
 
 
-
 function init(){
     selected=[];
+    console.log(limit)
+    if(limit!=10){
+        document.querySelectorAll("button").forEach((item)=> {
+            item.innerHTML="";
+            item.addEventListener("click", newMove);
+            
+        });
+    }else{
+        document.querySelectorAll("button").forEach((item)=>{
+            item.innerHTML="";
+            let scoreboard = document.getElementById("scoreboard");
 
-    document.querySelectorAll("button").forEach((item)=> {
-        item.innerHTML="";
-        item.addEventListener("click", newMove);
-        
-    });
+            while(scoreboard.firstChild){
+                scoreboard.removeChild(scoreboard.firstChild);
+            }
+
+            let span = document.createElement("span");
+
+            if(X === O){
+                span = "<span>Empate!!</span>"
+                scoreboard.innerHTML = span;
+            }else if(X>O){
+                span = "<span>X Ganhou!!</span>"
+                scoreboard.innerHTML = span;
+            }else{
+                span = "<span>O Ganhou!!</span>"
+                scoreboard.innerHTML = span;
+            }
+
+        });
+    }
+ 
 }
 
 init();
@@ -52,10 +78,12 @@ function check(){
         if(pos.every((item)=>items.includes(item))){
             if(playerLastMove==="X"){
                 X+=1;
+                limit+=1
 
                 Xspan.innerHTML="X | "+X;
             }else{
                 O+=1;
+                limit+=1
 
                 Ospan.innerHTML= O + " | O";
             }
@@ -65,11 +93,4 @@ function check(){
         }
     }
 
-    if(selected.filter((item)=> item).length===9){
-        console.log("RESULTADO: EMPATE!!");
-        init();
-        return;
-    }
-    
 }
-
