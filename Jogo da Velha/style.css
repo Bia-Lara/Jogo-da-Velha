@@ -97,3 +97,16 @@ body{
     border-right: none !important;
     
 }
+
+.confete {
+    width: 5px;
+    height: 15px;
+    position: absolute;
+    animation: fall 2s linear infinite;
+}
+
+@keyframes fall {
+    to {
+      transform: translateY(100vh);
+    }
+  }

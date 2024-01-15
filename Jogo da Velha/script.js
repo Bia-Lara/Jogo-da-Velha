@@ -29,7 +29,6 @@ function init(){
             item.addEventListener("click", newMove);
             
         });
-        
     }else{
         document.querySelectorAll("button").forEach((item)=>{
             item.innerHTML="";
@@ -57,6 +56,7 @@ function init(){
             setTimeout(reload, 5000);
         });
     }
+ 
 }
 
 init();
@@ -115,6 +115,7 @@ function soltarConfetes() {
     confete.className = 'confete';
     confete.style.backgroundColor = cor;
 
+    // Posicionamento aleatório na tela
     confete.style.left = Math.random() * window.innerWidth + 'px';
     confete.style.animationDelay = Math.random() * 2 + 's'; 
 
