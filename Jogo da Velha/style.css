@@ -29,7 +29,7 @@ body{
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
     border-color:rgb(8, 148, 141) ;
-    border-style:dashed;
+    
 }
 
 .scoreboard span{
@@ -73,9 +73,6 @@ body{
     font-family: 'Sketch Script Cool', sans-serif;
     font-weight: 800;
                                                 
-                                                
-                                                
-    
 }
 
 .top-none{

@@ -22,7 +22,6 @@ function reload(){
 
 function init(){
     selected=[];
-    console.log(limit)
     if(limit!=10){
         document.querySelectorAll("button").forEach((item)=> {
             item.innerHTML="";
@@ -95,8 +94,13 @@ function check(){
             }
            
             init();
-            return;
+            
         }
+    }
+
+    if(selected.filter((item)=> item).length===9){
+        init();
+        
     }
 
 }
