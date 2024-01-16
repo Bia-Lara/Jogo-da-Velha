@@ -18,11 +18,11 @@ body{
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
+    display: none;
 }
 
 .scoreboard{
     text-align: center;
-   
     background-color: rgb(5, 89, 85);
     border-radius: 20px;
     padding: 40px;
@@ -38,7 +38,7 @@ body{
     
 }
 
-.scoreboard:hover{
+.scoreboard:hover, .choose button:hover{
     transform: scale(1.1);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
@@ -107,3 +107,37 @@ body{
       transform: translateY(100vh);
     }
   }
+
+  .choose{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 200px;
+    padding: 5px;
+    background-color:rgb(5, 89, 85);
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .choose button{
+    padding: 5px 5px;
+    width: 180px;
+    height: 80px;
+    border-radius: 10px;
+    border: none;
+    margin: 20px;
+    cursor: pointer;
+    background-color: rgb(4, 158, 155);
+    font-family: 'Sketch Script Cool', sans-serif;
+    color: white;
+    font-size: 2rem;
+    transition: 0.5s;
+  }
+
+ 

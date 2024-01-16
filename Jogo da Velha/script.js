@@ -21,6 +21,9 @@ function reload(){
 }
 
 function init(){
+    document.getElementById("container").style.display = "block";
+    document.getElementById("choose").style.display = "none";
+ 
     selected=[];
     if(limit!=10){
         document.querySelectorAll("button").forEach((item)=> {
@@ -58,7 +61,7 @@ function init(){
  
 }
 
-init();
+
 
 function newMove(e){
     const index= e.target.getAttribute("data-i");
